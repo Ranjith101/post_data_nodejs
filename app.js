@@ -1,6 +1,7 @@
 // Importing express module
 const express = require('express');
 const app = express();
+const os = require('os');
 
 app.use(express.json());
 
@@ -11,7 +12,9 @@ res.sendFile(__dirname + '/index.html');
 app.post('/', (req, res) => {
 const { username, password } = req.body;
 const { authorization } = req.headers;
+const hostName = os.hostname();
 res.send({
+	hostName,
 	username,
 	password,
 	authorization,
