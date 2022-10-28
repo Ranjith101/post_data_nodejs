@@ -28,7 +28,6 @@ app.post("*", function (req, res) {
     authorization,
 	fullUrl
   });
-  console.log(hostName)
 });
 app.listen(PORT, (error) => {
   // Listen

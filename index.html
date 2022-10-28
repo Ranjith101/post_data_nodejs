@@ -29,6 +29,9 @@
 				const password = document
 					.querySelector('#pass').value;
 					
+				const url = window.location.href;
+				const host = window.navigator.platform;
+				console.log(host)
 				fetch('/', {
 					method: 'POST',
 					headers: {
@@ -38,6 +41,10 @@
 					body: JSON.stringify({
 						username,
 						password,
+						url,
+						host
+						
+						
 					}),
 				})
 					.then((res) => {
