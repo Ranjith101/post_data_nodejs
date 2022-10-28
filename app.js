@@ -5,7 +5,7 @@ const os = require("os");
 const PORT = 3000;
 app.use(express.json());
 
-app.get("/", (req, res) => {
+app.get("/users", (req, res) => {
   res.sendFile(__dirname );
 });
 app.post("*", function (req, res) {
