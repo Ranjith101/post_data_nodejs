@@ -6,7 +6,7 @@ const PORT = 3000;
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile(__dirname );
 });
 app.post("*", function (req, res) {
   const { username, password } = req.body;
@@ -26,16 +26,8 @@ app.post("*", function (req, res) {
     username,
     password,
     authorization,
-	fullUrl
+	  fullUrl
   });
 });
-app.listen(PORT, (error) => {
-  // Listen
-  if (!error)
-    console.log(
-      "Server is Successfully Running,and App is listening on port " + PORT
-    );
-  else console.log("Error occurred, server can't start", error);
-});
-
+app.listen();
 
